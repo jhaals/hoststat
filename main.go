@@ -5,11 +5,15 @@ import (
 	"log"
 	"net"
 	"os"
+	"sort"
 	"time"
 )
 
 // compare two lists of strings
 func equal(a, b []string) bool {
+	sort.Strings(a)
+	sort.Strings(b)
+
 	if a == nil && b == nil {
 		return true
 	}
