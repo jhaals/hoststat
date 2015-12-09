@@ -45,7 +45,7 @@ func monitor(hostname string) {
 		newaddrs, _ := net.LookupHost(hostname)
 
 		if !equal(addrs, newaddrs) {
-			log.Println(fmt.Sprintf("%s record changed from %s to %s, %s since last change",
+			log.Println(fmt.Sprintf("%s changed from %s to %s, %s since last change",
 				hostname, addrs, newaddrs, time.Since(lookupTime)))
 			addrs = newaddrs
 			lookupTime = time.Now()
